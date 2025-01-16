@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!-- 
+The HTML files are given for each exercise. You are not allowed to edit the HTML structure (nor to add IDs or classes), 
+only the CSS parts, inside <style>.
+
+Move the even boxes 10px up and the odd boxes 10px down with respect to their original position.
+
+-->
+
+<html>
+  <head>
+    <title>Exercise #2a: Positioning</title>
+    <style>
+      div {
+        float: left;
+        margin-top: 30px;
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+      }
+
+      /* add CSS here */
+      .odd {
+        position: relative;
+        top: 10px;
+      }
+
+      .even {
+        position: relative;
+        top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+  </body>
+</html>

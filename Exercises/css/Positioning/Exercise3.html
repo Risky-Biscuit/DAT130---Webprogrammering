@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!--
+Center the inner div within the box, vertically and horizontally.
+Use text-align property to also center the text.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 3a: Centering</title>
+    <style>
+      * {
+        margin: 0;
+        text-align: center;
+      }
+      .box {
+        background: #2db34a;
+        margin: 5px;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner">
+        <h3>A heading</h3>
+        <p>Some text!</p>
+      </div>
+    </div>
+  </body>
+</html>
