@@ -1,0 +1,29 @@
+<!--
+Write a function gcd(a,b) that takes two integers as input and returns their greatest common divisor.
+The simplest implementation is using Euclid's algorithm.
+Call the function with values 48 and 18 and write the output to the console.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Exercise #3: Greatest common divisor</title>
+    <script>
+      "use strict";
+
+      function gcd(a, b) {
+        while (b != 0) {
+          let t = b;
+          b = a % b;
+          a = t;
+        }
+        return a;
+      }
+      console.log(gcd(48, 18));
+    </script>
+  </head>
+  <body>
+    Open the browser console to see the results.
+  </body>
+</html>
