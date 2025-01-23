@@ -1,0 +1,72 @@
+<!--
+Extend the form you created in the previous exercise.
+Label the fields using <label>.
+Because of the follow-up exercise, keep labels separate from the form control and use the for attribute.
+Group the fields using <fieldset>.
+Add a hidden field campaign_id.
+Set the form action to https://www.ux.uis.no/~balog/dat310/formtest.php and check what happens upon submission.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <form
+      action="https://www.ux.uis.no/~balog/dat310/formtest.php"
+      method="post"
+    >
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="first-name">First name:</label>
+        <input
+          type="text"
+          id="first-name"
+          name="first-name"
+          required
+        /><br /><br />
+        <label for="last-name">Last name:</label>
+        <input
+          type="text"
+          id="last-name"
+          name="last-name"
+          required
+        /><br /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="gender">Gender:</label>
+        <input type="radio" name="pref" value="male" /> Male
+        <input type="radio" name="pref" value="female" /> Female
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Magazines</legend>
+        <input type="hidden" name="campaign_id" value="1234" />
+        <input type="checkbox" id="mag1" name="mag1" value="mag1" />
+        <label for="mag1">Stavanger Aftenbald</label><br />
+        <input type="checkbox" id="mag2" name="mag2" value="mag2" />
+        <label for="mag2">Teknisk Ukeblad</label><br />
+        <input type="checkbox" id="mag3" name="mag3" value="mag3" />
+        <label for="mag3">Se og Hør</label><br />
+        <input type="checkbox" id="mag4" name="mag4" value="mag4" />
+        <label for="mag4">Familien</label><br />
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Subscription</legend>
+        <label for="period">Subscription period:</label>
+        <select id="period" name="period">
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+          <option value="18">18 months</option>
+          <option value="24">24 months</option>
+        </select>
+      </fieldset>
+      <br />
+      <div id="button">
+        <input type="submit" value="Subscribe" />
+      </div>
+    </form>
+  </body>
+</html>
