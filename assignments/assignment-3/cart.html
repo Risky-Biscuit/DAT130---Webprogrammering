@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopping Prototype - Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top header with brand name and navigation links -->
+    <header>
+      <div class="logo">Bits & Bobs</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" title="Home">&#127968;</a></li>
+          <li><a href="cart.html" title="Cart">&#128722;</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Page layout for cart items and checkout form -->
+    <main class="cart-page">
+      <h1>Cart</h1>
+
+      <div class="framed">
+        <table class="cart-table">
+          <tr>
+            <th>Product</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Calculated Price</th>
+            <th>Cancel</th>
+          </tr>
+          <tr>
+            <td>Black Crows Atris</td>
+            <td>1</td>
+            <td>$800.00</td>
+            <td>$0.00</td>
+            <td>$800.00</td>
+            <td><button>Cancel</button></td>
+          </tr>
+          <tr>
+            <td>Hamilton Beach Blender</td>
+            <td>1</td>
+            <td>$2,000.00</td>
+            <td>$0.00</td>
+            <td>$2,000.00</td>
+            <td><button>Cancel</button></td>
+          </tr>
+          <tr>
+            <td>Macbook Pro</td>
+            <td>1</td>
+            <td>$2,500.00</td>
+            <td>$0.00</td>
+            <td>$2,500.00</td>
+            <td><button>Cancel</button></td>
+          </tr>
+          <tr>
+            <td>Cervélo S5</td>
+            <td>1</td>
+            <td>$13,000.00</td>
+            <td>$1,300.00</td>
+            <td>$11,700.00</td>
+            <td><button>Cancel</button></td>
+          </tr>
+          <tr>
+            <td colspan="4" style="text-align: right">Total:</td>
+            <td colspan="2"><strong>$17,000</strong></td>
+          </tr>
+        </table>
+      </div>
+
+      <h1>Checkout</h1>
+      <div class="form-container">
+        <form class="framed">
+          <fieldset>
+            <legend>Billing details</legend>
+            <label for="first-name">First name:</label>
+            <input type="text" id="first-name" name="first-name" />
+
+            <label for="last-name">Last name:</label>
+            <input type="text" id="last-name" name="last-name" />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Delivery address</legend>
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" />
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" />
+
+            <label for="postal-code">Postal code:</label>
+            <input type="text" id="postal-code" name="postal-code" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Submit order</legend>
+            <div class="tos-container">
+              <label for="terms">
+                <input type="checkbox" id="terms" name="terms" />
+                I agree to the terms of service
+              </label>
+              <button type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>Contact us: email@example.com | Tel: 123-456-7890</p>
+    </footer>
+  </body>
+</html>

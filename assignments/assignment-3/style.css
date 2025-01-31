@@ -1,0 +1,287 @@
+/* Global reset and base styles */
+html,
+body {
+  margin: 0; /* Removes default browser margin */
+  padding: 0; /* Removes default browser padding */
+  font-family: sans-serif; /* Sets a sans-serif font for the entire page */
+  height: 100%; /* Ensures html/body can stretch to full viewport height */
+}
+
+/* Body uses flex layout to push the footer down when content is short. In other words making it "sticky" */
+body {
+  display: flex; /* Enables flexbox on body */
+  flex-direction: column; /* Stacks header, main, and footer vertically */
+}
+
+/* Basic link styling */
+a {
+  text-decoration: none; /* No underline on links by default */
+  color: #00f; /* Makes links blue */
+}
+a:hover {
+  text-decoration: underline; /* Underline on hover to indicate it's a link */
+}
+
+/* Header: fixed position at top of viewport */
+header {
+  position: fixed; /* Stays at the top when scrolling */
+  top: 0; /* Positioning from top edge */
+  left: 0; /* Positioning from left edge */
+  width: 100%; /* Spans the entire width of the page */
+  z-index: 999; /* Ensures header is above other elements */
+  background-color: #333; /* Dark gray background */
+  color: white; /* White text color for contrast */
+  height: 40px; /* Header is 40px tall */
+  display: flex; /* Flex layout for items in the header */
+  align-items: center; /* Vertically center items */
+  justify-content: flex-end; /* Put nav items on the right side */
+  padding: 0 20px; /* Horizontal padding inside header */
+}
+
+/* Logo area that visually extends above the 40px header bar */
+.logo {
+  position: relative; /* So we can offset its top position */
+  height: 60px; /* Extra tall so it overlaps the header bar */
+  left: 5%; /* Moves it a bit from the left edge */
+  z-index: 1000; /* Higher stacking order than other header elements */
+  font-size: 1.2em; /* Slightly larger font size for logo text */
+  color: #fff; /* White text color */
+  margin-right: auto; /* Pushes the rest of nav to the right */
+  display: flex; /* Allows aligning items within the logo area */
+  align-items: center; /* Vertically centers any children inside logo */
+}
+
+/* Navigation list styling within the header */
+header nav ul {
+  position: relative; /* Can be used for positioning dropdowns, etc. */
+  list-style: none; /* Removes default bullet points from list */
+  display: flex; /* Lays out list items horizontally */
+  gap: 20px; /* Space between each list item */
+  margin: 50px; /* Moves the nav links downward by 50px */
+  padding: 0; /* Removes default padding from list */
+}
+header nav ul li {
+  display: inline-block; /* An alternative to flex for each list item */
+}
+header nav a {
+  color: #fff; /* White links for header contrast */
+  font-size: 1.2em; /* Slightly larger text for nav links */
+}
+
+/* Main content region with top margin to avoid overlap under fixed header */
+main {
+  margin-top: 100px; /* Clears space so header doesn't cover content */
+  max-width: 1400px; /* Constrains content width on large displays */
+  width: 90%; /* 90% of the viewport width, for a responsive layout */
+  margin-left: auto; /* Horizontally center the main content */
+  margin-right: auto; /* Same as above */
+  flex: 1; /* Allows main to stretch so footer stays at bottom */
+  display: flex; /* By default, we place aside and section side by side */
+  gap: 20px; /* Space between child elements (aside/shop-content) */
+}
+
+/* Style for h1 headings inside main */
+main h1 {
+  background-color: #333; /* Dark background to highlight heading */
+  color: white; /* White text for contrast */
+  padding: 5px; /* Small inner spacing */
+  font-size: 1.2em; /* Slightly larger heading size */
+}
+
+/* Aside section on the right for cart summary (on index page) */
+aside {
+  width: 300px; /* Fixed width for the aside area */
+  background-color: #00dbdb; /* Distinct background color to highlight cart info */
+  padding: 10px; /* Inner spacing for readability */
+  order: 2; /* Places aside to the right if using flex row direction */
+}
+
+/* Links in aside heading */
+aside h2 a {
+  color: #000; /* Black text for cart link in aside header */
+}
+
+/* Table styling inside aside */
+aside table {
+  width: 100%; /* Fill entire width of aside */
+  border-collapse: collapse; /* Remove space between table borders */
+  font-size: 0.9em; /* Slightly smaller font for table data */
+}
+aside th,
+aside td {
+  border-bottom: 1px solid #ccc; /* Light gray border for row separation */
+  padding: 5px; /* Cell padding for readability */
+  text-align: left; /* Left-align table content */
+}
+
+/* Main shop content container (products, banner) */
+.shop-content {
+  flex: 1; /* Occupies remaining space next to aside */
+  padding: 0; /* No extra padding since we have gap in main */
+  order: 1; /* Ensures this displays on the left with aside on the right */
+  display: flex; /* Use flex so products can wrap on smaller screens */
+  flex-wrap: wrap; /* Allows products to wrap to new lines if needed */
+  gap: 20px; /* Space between individual product elements */
+}
+
+/* Banner with top and bottom borders around the image */
+.banner {
+  width: 100%; /* Banner spans full width of .shop-content */
+  border-top: 5px solid #000; /* Thick black border on top */
+  border-bottom: 5px solid #000; /* Thick black border on bottom */
+  margin-bottom: 20px; /* Space below banner before products */
+  padding: 0; /* No extra padding needed around the image */
+}
+.banner img {
+  width: 100%; /* Scales image to container width */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes extra whitespace at bottom of inline images */
+}
+
+/* Individual product styling */
+.product {
+  flex: 1 1 280px; /* Grows/shrinks, default width ~280px, for responsiveness */
+  border: 1px solid #ccc; /* Light gray border around each product */
+  padding: 10px; /* Inner spacing */
+  box-sizing: border-box; /* Includes padding/border in total width calc */
+  flex-direction: column; /* Column arrangement if we add more elements inside */
+  align-items: center; /* Centers items horizontally (like the image) if flex is used */
+  transition: background-color 0.2s, box-shadow 0.2s; /* Smooth hover transitions */
+}
+.product:hover {
+  background-color: #f9f9f9; /* Slight background change on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Drop shadow for hover effect */
+}
+.product h3 {
+  margin: 0; /* Remove default heading margin */
+  margin-top: 10px; /* Add a small gap above the product name */
+}
+.product p {
+  text-align: right; /* Price aligned to the right side */
+  margin: 0; /* Remove default paragraph margin */
+  margin-top: 5px; /* Small spacing above the price */
+}
+
+/* Image container for discount badge */
+.image-container {
+  position: relative; /* Allows absolutely positioned badge inside */
+}
+.image-container img {
+  width: 100%; /* Make the product image fill container width */
+  display: block; /* Remove any extra bottom whitespace */
+}
+.badge {
+  position: absolute; /* Positions discount badge on top of the image */
+  top: 30px; /* 30px from the top of the container */
+  right: 30px; /* 30px from the right of the container */
+  background: red; /* Red background for visibility */
+  color: #fff; /* White text on red background */
+  padding: 5px; /* Space around the badge text */
+  font-size: 0.8em; /* Smaller text size for badge */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Footer area at bottom of page with a dark background */
+footer {
+  background-color: #333; /* Dark gray color for footer background */
+  color: white; /* White text in footer */
+  display: flex; /* Flex to center content */
+  align-items: center; /* Vertically center the footer text */
+  justify-content: center; /* Horizontally center the footer text */
+  padding: 10px; /* Space around the footer content */
+  height: 120px; /* Footer is 120px tall */
+  border-top: 5px solid #000; /* Thick black border on top of footer */
+}
+
+/* "Framed" box styling used for tables, forms, etc. */
+.framed {
+  border: 1px solid #000; /* Solid black border around the element */
+  padding: 5px; /* Inner spacing */
+  margin-bottom: 20px; /* Space below each framed element */
+  font-size: 0.8em; /* Slightly smaller text within framed boxes */
+}
+
+/* Cart page overrides: stack elements vertically */
+.cart-page {
+  display: block; /* Switches from flex to block layout on the cart page */
+  gap: 0; /* No extra gap needed between cart sections */
+}
+
+/* Cart table layout */
+.cart-table {
+  width: 100%; /* Occupies full width of the container */
+  border-collapse: collapse; /* Merge adjacent table cells for a cleaner look */
+}
+.cart-table th,
+.cart-table td {
+  border-bottom: 1px solid #ccc; /* Horizontal lines between rows */
+  padding: 10px; /* Space within cells */
+  text-align: left; /* Left-align content in cells */
+}
+.cart-table th {
+  background: #eee; /* Light gray background for table headers */
+}
+
+/* Checkout form layout: each fieldset is a horizontal row of elements */
+form.framed fieldset {
+  display: flex; /* Flex layout for the input labels/fields in one row */
+  justify-content: center; /* Center items horizontally inside the row */
+  align-items: center; /* Center them vertically */
+  gap: 2rem; /* Space between each label/input pair */
+  border: 1px solid #ccc; /* Light border around the fieldset */
+  padding: 10px; /* Space inside the fieldset */
+  margin-bottom: 10px; /* Gap between fieldsets */
+}
+form.framed label {
+  display: inline-block; /* Keep label inline with the input */
+  width: 90px; /* Fixed width for label text alignment */
+  text-align: right; /* Right-align the label text */
+  margin-bottom: 5px; /* Tiny gap below the label (for visual spacing) */
+}
+form.framed input[type="text"],
+form.framed input[type="email"] {
+  width: 150px; /* Fixed width for input fields */
+  margin-left: 5px; /* Space between label text and input box */
+  margin-bottom: 5px; /* Small gap below input if it wraps */
+}
+
+/* Checkout form submit button styling */
+form.framed button[type="submit"] {
+  margin-top: 5px; /* Space above the button */
+  padding: 6px 12px; /* Horizontal and vertical padding inside the button */
+  background: #2a9d8f; /* Teal background color */
+  color: #fff; /* White text on teal */
+  border: none; /* No border on button */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+form.framed button[type="submit"]:hover {
+  background: #264653; /* Darker teal on hover */
+}
+
+/* TOS (Terms of Service) container with checkbox and button aligned */
+.tos-container {
+  display: flex; /* Place checkbox label and button in a row */
+  white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
+  align-items: center; /* Vertically center the items */
+  justify-content: center; /* Center them horizontally within the fieldset */
+  gap: 10rem; /* Large gap between the checkbox text and submit button */
+}
+
+/* Responsive layout adjustments for small screens */
+@media (max-width: 1200px) {
+  main {
+    flex-direction: column; /* Stack aside and shop-content vertically for narrow screens */
+  }
+  aside {
+    width: 100%; /* Let aside use full width in a column layout */
+    order: 1; /* Place aside above .shop-content */
+    margin-bottom: 20px; /* Space between aside and logo */
+  }
+  .shop-content {
+    order: 2; /* Show product section below aside */
+    width: 100%; /* Occupy full width in column layout */
+  }
+  .product {
+    width: 100%; /* Products stretch to full width on narrow screens */
+  }
+}
