@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#searchField {
+  width: 200px;
+  padding: 5px;
+}
+
+/* Sort container */
+#sortContainer {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#sortOptions {
+  padding: 5px;
+}
+
+/* Address Book entries */
+#addressBook {
+  margin-bottom: 20px;
+}
+
+.entry {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Add Entry form */
+#addEntry {
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; /* keep form tight */
+  margin: auto;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  width: 100px;
+  padding: 7px;
+  align-self: flex-start;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Delete button style within each entry */
+.entry button {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 5px;
+}
+
+.entry button:hover,
+button:hover {
+  opacity: 0.9;
+}

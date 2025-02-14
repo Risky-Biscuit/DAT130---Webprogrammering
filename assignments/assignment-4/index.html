@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAT310 Assignment 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Address Book</h1>
+
+    <!-- Search Bar -->
+    <div id="search">
+      <input type="text" id="searchField" placeholder="Search..." />
+    </div>
+
+    <!-- Sorting Dropdown -->
+    <div id="sortContainer">
+      <label for="sortOptions">Sort by:</label>
+      <select id="sortOptions">
+        <option value="name">Name</option>
+        <option value="telephone">Telephone</option>
+        <option value="email">Email</option>
+      </select>
+    </div>
+
+    <!-- Address Book Display -->
+    <div id="addressBook"></div>
+
+    <!-- Add New Entry Form -->
+    <div id="addEntry">
+      <h2>Add New Entry</h2>
+      <form id="entryForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="telephone">Telephone:</label>
+        <input type="text" id="telephone" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+
+        <button type="submit">Add Entry</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
